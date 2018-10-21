@@ -1,0 +1,151 @@
+.sceneMask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vh;
+    height: 100vw;
+    z-index: 999;
+    .sceneBox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: 0 auto;
+        background: url(../../public/images/login/authorize.png) center center / 100% 95% no-repeat;
+        //padding: 95px 0 0 85px;
+        //width: 1369px;
+        //height: 101%;
+        width: 100vw;
+        height: 98vw;
+        // margin: 0.43rem auto;
+    }
+}
+
+
+.authorizeConfirm {
+    background: transparent;
+    position: relative;
+    //position: absolute;
+    //left: 50%;
+    //margin: -235px 0 0 -235px;
+    //top:50%;
+    width: 100%;
+    height: 90%;
+    padding: 1.37rem 0.65rem 0 0.65rem;
+    box-shadow: 0 0 100px rgba(0, 0, 0, .08);
+    margin-bottom: 2%;
+    //background: url(../../public/images/login/authorize.png) no-repeat;
+    //background-size: 471px 550px;
+    .detailDesc {
+        width: 93%;
+        height: 60%;
+        line-height: 0.54rem;
+        font-size: 0.36rem;
+        position: relative;
+        word-wrap: break-word;
+        word-break: break-all;
+        margin-top: 4%;
+        margin-bottom: 4%;
+        .englishDesc {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            margin-top: 6px;
+        }
+        > p {
+            margin: 0;
+            //text-indent: 2rem;
+            .erweima {
+                height: 222px;
+                width: 160px;
+                display: none;
+                position: absolute;
+                top: 5px;
+                left: 106px;
+
+            }
+        }
+        .te {
+            &:hover {
+                cursor: pointer;
+                .erweima {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .content {
+        float: left;
+        width: 100%;
+        text-align: center;
+        //.ant-confirm-btns{
+        //  position: absolute;
+        bottom: 10px;
+        //left: 50%;
+        margin-top: 0.625rem;
+        //margin-bottom: 2%;
+        button {
+            width: 45%;
+            height: 52px;
+            background: url(../../public/images/common/cancel_btn.png) no-repeat center center / 100% 100%;
+            border: none;
+            float: left;
+            margin: 0 5px;
+        }
+        .authorize {
+            background: url(../../public/images/login/authorize_btn.png) no-repeat center center / 100% 100%;
+        }
+    }
+    // }
+}
+
+.music_btn {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 50px;
+    top: 20px;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.bgMusic_btn {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 130px;
+    top: 20px;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+@media (min-width: 1281px) {
+    .music_btn {
+        background: url(../../public/images/common/music.png) no-repeat 0px 0px;
+    }
+
+    .bgMusic_btn {
+        background: url(../../public/images/common/bgMusic.png) no-repeat 0px 0;
+    }
+}
+
+@media (max-width: 1280px) {
+    .music_btn {
+        background: url(../../public/images/common/music.png) no-repeat 0px 0px;
+    }
+
+    .bgMusic_btn {
+        background: url(../../public/images/common/bgMusic.png) no-repeat 0px 0;
+    }
+}
+
+.bgMusic_btn_off {
+    background: url(../../public/images/common/offBgMusic.png) no-repeat 0px 0;
+}
+
+.music_btn_off {
+    background: url(../../public/images/common/offMusic.png) no-repeat 0px 0px;
+}
+

@@ -1,0 +1,162 @@
+@import "~themes/vars";
+
+:global {
+
+  #nprogress {
+    pointer-events: none;
+
+    .bar {
+      background: @primary-color;
+      position: fixed;
+      z-index: 1024;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 2px;
+    }
+
+    .peg {
+      display: block;
+      position: absolute;
+      right: 0;
+      width: 100px;
+      height: 100%;
+      box-shadow: 0 0 10px @primary-color,0 0 5px @primary-color;
+      opacity: 1.0;
+      transform: rotate(3deg) translate(0px,-4px);
+    }
+
+    .spinner {
+      display: block;
+      position: fixed;
+      z-index: 1031;
+      top: 15px;
+      right: 15px;
+    }
+
+    .spinner-icon {
+      width: 18px;
+      height: 18px;
+      box-sizing: border-box;
+      border: solid 2px transparent;
+      border-top-color: @primary-color;
+      border-left-color: @primary-color;
+      border-radius: 50%;
+
+      :local {
+        animation: nprogress-spinner 400ms linear infinite;
+      }
+    }
+  }
+
+  .music_btn{
+    position: absolute;
+    width: 0.76rem;
+    height: 0.76rem;
+    left: 0.27rem;
+    top: 0.36rem;
+    z-index: 9999;
+    cursor: pointer;
+    background: url(../public/images/common/music.png) top left / 100% 100% no-repeat ;
+  }
+  .bgMusic_btn{
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    left: 130px;
+    top: 20px;
+    z-index: 9999;
+    cursor: pointer;
+    background: url(../public/images/common/bgMusic.png) top left / 100% 100% no-repeat;
+  }
+
+.bgMusic_btn_off{
+  background: url(../public/images/common/offBgMusic.png) top left / 100% 100% no-repeat;
+}
+
+.music_btn_off{
+  background: url(../public/images/common/offMusic.png) top left / 100% 100% no-repeat;
+}
+
+.accountMoney{
+  width: 100%;
+  text-align: right;
+  margin: 0 !important;
+  font-size: 0.3rem;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-right: 0.54rem;
+  color: white
+}
+
+.help{
+  position: absolute;
+  text-align: right;
+  width: 100%;
+  top: 0.47rem;
+  right: 0.82rem;
+  z-index: 998;
+  // transform: translateZ(0.9px);
+  >span{
+    display: inline-block;
+  width: 0.91rem;
+  height: 0.45rem;
+  font-size: 0.29rem;
+  color: white;
+  }
+}
+
+.helpContent{
+  line-height: 30px;
+}
+
+.title{
+  font-size: 0.36rem;
+}
+
+@media (min-width: 1281px) {
+  //.accountMoney{
+  //  padding-right: 418px;
+  //}
+}
+
+@media (max-width: 1280px) {
+//.accountMoney{
+//  padding-right: 237px;
+//}
+
+  .nprogress-custom-parent {
+    overflow: hidden;
+    position: relative;
+
+    #nprogress {
+      .bar,
+      .spinner {
+        position: absolute;
+      }
+    }
+  }
+}
+}
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.reqErrorMsg{
+  width: 100px;
+  height: 30px;
+  background: url(../public/images/common/errorMsg_bg.png) no-repeat;
+}
+
+
+

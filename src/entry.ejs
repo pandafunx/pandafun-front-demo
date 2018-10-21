@@ -1,0 +1,43 @@
+<% htmlWebpackPlugin.options.headScripts = htmlWebpackPlugin.options.headScripts || [] %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PandaFun-第一款EOS区块链游戏</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <% for (item of htmlWebpackPlugin.options.headScripts) { %>
+  <script src="<%= item %>"></script>
+  <% } %>
+</head>
+<body>
+  <div id="a">
+    <div id="root"></div>
+  </div>
+</body>
+<script>
+  const width = document.documentElement.clientWidth;
+  const height = document.documentElement.clientHeight;
+  const docEle = document.body;
+  const docEleStyle = docEle.style;
+  if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+    if (width < height){ // 竖屏
+      docEleStyle.transform = 'rotate(90deg)';
+      docEleStyle.width = height + 'px';
+      docEleStyle.height = width + 'px';
+      docEleStyle.transformOrigin = '50% 50%';
+      docEleStyle.top = (height - width) / 2 + 'px';
+      docEleStyle.left = (0 - (height - width)) / 2 + 'px';
+    } else {
+      docEleStyle.transform = 'none';
+      docEleStyle.width = width + 'px';
+      docEleStyle.height = height + 'px';
+      docEleStyle.transformOrigin = '50% 50%';
+      docEleStyle.top = 0;
+      docEleStyle.left = 0;
+    }
+  }
+</script>
+
+</html>

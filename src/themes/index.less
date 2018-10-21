@@ -1,0 +1,1584 @@
+@import "~themes/vars";
+
+body {
+  width: 100%;
+  // height: @height;
+  overflow-x: hidden;
+  //font-family: 'FZCuYuan-M03S';
+  box-sizing: content-box;
+  // padding-right: 20px;
+  // overflow-y: auto!important;
+}
+
+::-webkit-scrollbar-thumb {
+  //width: 20px;
+  height: 40px;
+  background:url(../public/images/common/scroll_bar.png) no-repeat;
+ // float: left;
+}
+::-webkit-scrollbar-thumb:vertical {
+  height: 40px;
+  -webkit-border-image: url(../public/images/common/scroll_bar.png) 8 0 8 0 stretch stretch;
+  border-width: 8 0 8 0;
+}
+
+::-webkit-scrollbar-track-piece:vertical {
+  //width: 6px;
+  background: url(../public/images/common/scroll_line.png ) 7px 50% repeat-y;
+}
+
+::-webkit-scrollbar {
+  //width: 20px;
+  height: 8px;
+  text-align: center;
+  background: transparent;
+}
+
+// .innerbox::-webkit-scrollbar {/*滚动条整体样式*/
+//   width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+//   height: 4px;
+// }
+// .innerbox::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+//   border-radius: 5px;
+//   -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+//   background: rgba(0,0,0,0.2);
+// }
+// .innerbox::-webkit-scrollbar-track {/*滚动条里面轨道*/
+//   -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+//   border-radius: 0;
+//   background: rgba(0,0,0,0.1);
+// }
+:global {
+  .reqErrMsg{
+    height: 30px;
+    top: 120px;
+    width: 100%!important;
+    zoom: 0.7;
+    .ant-modal-content{
+      min-width: 320px;
+      height: 80px;
+      background: url(../public/images/common/errorMsg_bg.png) no-repeat;
+      background-size: 100% 80px;
+      width: fit-content;
+      margin: 0 auto;
+      .ant-confirm-body{
+        .ant-confirm-content{
+          margin: 0 10px;
+          white-space: nowrap;
+          font-size: 0.36rem;
+        }
+      }
+      i{
+        display: none!important;
+      }
+      .ant-modal-close{
+        span{
+          display: none;
+        }
+      }
+      .ant-confirm-btns{
+        display: none;
+      }
+    }
+    &.reqErrMsg_info{
+      .ant-modal-content{
+        background: url(../public/images/common/errorMsg_info.png) no-repeat;
+        background-size: 100% 80px;
+        width: fit-content;
+        margin: 0 auto;
+        .ant-modal-body{
+          padding: 0;
+          text-align: center;
+          line-height: 80px;
+          font-size: 30px;
+          .ant-confirm-body{
+            .ant-confirm-content{
+              margin: 0 10px;
+              font-size: 20px;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+  }
+  .successModal{
+    background: transparent;
+    position: relative;
+    top:0;
+    height: 100%;
+    .ant-modal-content{
+      height: 6.34rem;
+      width: 6.61rem;
+      margin: 0 auto;
+      padding-top: 0.27rem;
+      margin-left: 4.53rem;
+      margin-top: 0.43rem;
+      //background: url(../public/images/meditatively/successOne.png) no-repeat top left / 100% 100%;
+      i{
+        display: none!important;
+      }
+      .ant-modal-close{
+        display: block!important;
+        width: 1.09rem;
+        height: 1.09rem;
+        right: 0.82rem;
+        span{
+          display: none;
+        }
+      }
+      .ant-modal-body{
+        width: 5.27rem;
+        padding-left: 0;
+        padding-right: 0;
+        .ant-confirm-btns{
+          position: absolute;
+          //bottom: 100px;
+          left: 1.81rem;
+          button{
+            width: 1.63rem;
+            height: 0.49rem;
+            background: url(../public/images/common/ok_btn.png) no-repeat top left / 100% 100%;
+            border: none;
+            span{
+              display: none;
+            }
+          }
+        }
+      }
+      .ant-confirm-content{
+        position: relative;
+        margin: 0;
+      }
+    }
+  }
+  .successSkillModal{
+    background: transparent;
+    position: relative;
+    .ant-modal-content{
+      width: 6.56rem;
+      height: 6.34rem;
+      margin-left: 3.17rem;
+      margin-top: -1.12rem;
+      padding-top: 1.26rem;
+     // background: url(../public/images/meditatively/successOne.png) no-repeat top left / 100% 100%;
+      i{
+        display: none!important;
+      }
+      .ant-modal-close{
+        display: block!important;
+        width: 1.09rem;
+        height: 1.09rem;
+        right: 0.85rem;
+        span{
+          display: none;
+        }
+      }
+      .ant-modal-body{
+        width: 5.24rem;
+        padding-left: 0;
+        padding-right: 0;
+        .ant-confirm-btns{
+          position: absolute;
+          bottom: 1.27rem;
+          left: 1.11rem;
+          button{
+            width: 1.63rem;
+            height: 0.49rem;
+            background: url(../public/images/common/cancel_btn.png) no-repeat top left / 100% 100%;
+            border: none;
+            float:right;
+            margin: 0 0.09rem;
+            &.ant-btn.ant-btn-primary{
+            //  background: url(../public/images/meditatively/replace_btn.png) no-repeat top left / 100% 100%;
+            }
+            span{
+              display: none;
+            }
+          }
+        }
+      }
+      .ant-confirm-content{
+        position: relative;
+        margin: 0;
+      }
+    }
+  }
+
+  // .transactionModal{
+  //   background: transparent;
+  //   position: relative;
+  //   left: -313px;
+  //   .ant-modal-content{
+  //     width: 893px;
+  //     height: 554px;
+  //     padding: 80px 110px 0 140px ;
+  //     background: url(../public/images/pandahome/pay_modal.png) no-repeat;
+  //     i{
+  //       display: none!important;
+  //     }
+  //     .ant-modal-body{
+  //       width: 640px;
+  //       margin: 0 auto;
+  //       margin-top: 20px;
+  //       padding: 0;
+  //       .ant-confirm-content{
+  //         height: 330px;
+  //         overflow-y: auto;
+  //         margin-left: 0;
+  //       }
+  //       .ant-confirm-btns{
+  //         position: absolute;
+  //         top: 2px;
+  //         right: 45px;
+  //         margin-top: 0;
+
+  //         button{
+  //           width: 105px;
+  //           height: 86px;
+  //           border: none;
+  //           background: transparent;
+  //           span{
+  //             display: none;
+  //           }
+  //         }
+  //       }
+  //     }
+  //     .ant-confirm-content{
+  //         position: relative;
+
+  //     }
+  //   }
+  // }
+
+  .commonAlert{
+    background: transparent;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top:0 !important;
+    .ant-modal-content{
+      height: 5.43rem;
+      width: 7.39rem;
+      margin: 0 auto;
+      padding: 0;
+      padding-top: 1.2rem;
+      margin-top: 0.96rem;
+      position: relative;
+      left: 0.64rem;
+      background: url(../public/images/common/common_modal_bg.png) no-repeat top left / 100% 100%;
+      i{
+        display: none!important;
+      }
+      .ant-modal-close{
+        display: block!important;
+        width: 1.16rem;
+        height: 1.16rem;
+        right: 1.25rem;
+        span{
+          display: none;
+        }
+      }
+      .ant-modal-body{
+        width: 5.80rem;
+        padding: 0;
+        padding-left: .23rem;
+        text-align: center;
+        .ant-confirm-btns{
+          position: absolute;
+          //bottom: 100px;
+          left: 1.90rem;
+          margin-top: 1rem;
+          button{
+            width: 2.36rem;
+            height: 0.54rem;
+            background: url(../public/images/common/ok_btn.png) no-repeat top left / 100% 100%;
+            border: none;
+            span{
+              display: none;
+            }
+          }
+        }
+      }
+      .ant-confirm-content{
+          position: relative;
+          font-size: 0.36rem;
+          color: #502c1c;
+          margin-left: 0;
+          margin-top: 0;
+      }
+    }
+    &.selectPlayerConfirm{
+      .ant-modal-content{
+        .ant-modal-body{
+          .ant-confirm-btns{
+            button{
+              background: url(../public/images/common/cancel_btn.png) no-repeat;
+            }
+          }
+        }
+      }
+    }
+    &.useSkillModal{
+      .ant-modal-content{
+        width: 100%;
+        .ant-modal-body{
+          width: 100%;
+        }
+      }
+    }
+    &.gameEndModal{
+      .ant-modal-content{
+        // .ant-modal-body{
+        //   width: 410px;
+        //   padding: 0;
+        //   padding-top: 18px;
+        //   margin-left: 18px;
+        //   .ant-confirm-body{
+        //     .ant-confirm-content{
+        //       margin: 0;
+        //     }
+        //     .ant-confirm-btns{
+        //         left: 135px;
+        //       }
+        //   }
+        // }
+      }
+    }
+  }
+  // .pandaPassAway{
+  //   .ant-modal-body{
+  //     width: 400px;
+  //     padding-left: 0;
+  //     padding-right: 0;
+  //     margin-left: 4px;
+  //     text-align: center;
+  //     .ant-confirm-btns{
+  //       position: absolute;
+  //       bottom: 100px;
+  //       left: 145px;
+  //       button{
+  //         width: 175px;
+  //         height: 52px;
+  //         background: url(../public/images/common/ok_btn.png) no-repeat;
+  //         border: none;
+  //         span{
+  //           display: none;
+  //         }
+  //       }
+  //     }
+  //   }
+  //   .ant-confirm-content{
+  //       position: relative;
+  //       font-size: 24px;
+  //       color: #502c1c;
+  //       margin-top: 50px;
+  //       padding: 0px 20px;
+  //   }
+  // }
+  .commonAlertSign{
+    background: transparent;
+    position: relative;
+    .ant-modal-content{
+      height: 5.43rem;
+      width: 7.39rem;
+      margin: 0 auto;
+      margin-top: -0.83rem;
+      position: relative;
+      left: 0.64rem;
+      background: url(../public/images/common/common_modal_bg.png) no-repeat top left / 100% 100%;
+      i{
+        display: none!important;
+      }
+      .ant-modal-close{
+        display: block!important;
+        width: 1.2rem;
+        height: 1.2rem;
+        right: 1.21rem;
+        span{
+          display: none;
+        }
+      }
+      .ant-modal-body{
+        width: 5.62rem;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0.22rem;
+        text-align: center;
+        .ant-confirm-btns{
+          position: absolute;
+          left: 2.16rem;
+          bottom: 1.45rem;
+          button{
+            width: 1.72rem;
+            height: 0.53rem;
+            background: url(../public/images/common/ok_btn.png) no-repeat top left / 100% 100%;
+            border: none;
+            span{
+              display: none;
+            }
+          }
+        }
+      }
+      .ant-confirm-content{
+          margin: 0;
+          position: relative;
+          font-size: 0.43rem;
+          color: #502c1c;
+          margin-top: 0.14rem;
+      }
+    }
+    &.selectPlayerConfirm{
+      .ant-modal-content{
+        .ant-modal-body{
+          .ant-confirm-btns{
+            button{
+              background: url(../public/images/common/cancel_btn.png) no-repeat;
+            }
+          }
+        }
+      }
+    }
+    &.useSkillModal{
+      .ant-modal-content{
+        width: 100%;
+        .ant-modal-body{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+
+  .pandaDathModal{
+    .ant-confirm .ant-modal-body{
+      padding-top: 0
+    }
+    .ant-modal-content .ant-confirm-content{
+      padding: 0 20px;
+    }
+  }
+
+  .commonInfoModal{
+    .ant-modal-content{
+      height: 6rem;
+      width: 7.04rem;
+      margin: 0 auto;
+      margin-top: 0.52rem;
+      position: relative;
+      left: 0.64rem;
+      // margin-left:
+      background: url(../public/images/common/modal_info.png) no-repeat top left / 100% 100%;
+      .ant-modal-close{
+        right: .83rem;
+      }
+      .ant-modal-body{
+        width: 5.98rem;
+        padding: 0 0.6rem 0 0.4rem;
+        .ant-confirm-btns{
+          margin-top: 1.54rem;
+          left: 1.7rem;
+          bottom: 1.2rem;
+        }
+      }
+    }
+  }
+
+  // .commonSuccessModal{
+  //   .ant-modal-content{
+  //     height: 474px;
+  //     background: url(../public/images/meditatively/successOne.png) no-repeat;
+  //     .ant-modal-body{
+  //       padding-top: 45px;
+  //       .ant-confirm-btns{
+  //         margin-bottom: 85px;
+  //       }
+  //     }
+  //   }
+  // }
+
+  .wudojoSuccessModal_one{
+    .ant-modal-content{
+      // height: 474px;
+     // background: url(../public/images/wudojo/successOne_bg.png) no-repeat top left / 100% 100%;
+       .ant-modal-close{
+         right: 0.88rem;
+       }
+       .ant-modal-body{
+      //   padding-top: 7px;
+         padding-left: 0.625rem;
+      //   box-sizing: content-box;
+         .ant-confirm-content{
+             font-size: 0.3rem;
+         }
+         }
+      //   .ant-confirm-btns{
+      //     margin-bottom: 5px;
+      //   }
+      // }
+    }
+  }
+
+  .wudojoSuccessModal_ten{
+    .ant-modal-content{
+      height: 6.88rem;
+      width: 7.16rem;
+      margin: auto;
+      margin-top: 0.49rem;
+      position: relative;
+      left: 0.64rem;
+     //background: url(../public/images/wudojo/successTen_bg.png) no-repeat top left / 100% 100%;
+      .ant-modal-close{
+        right: 0px
+      }
+      .ant-modal-body{
+        padding-top: 7px;
+        padding-left: 20px;
+        width: 5.2rem;
+        box-sizing: content-box;
+        .ant-confirm-content{
+          margin-left: 0
+        }
+        .ant-confirm-btns{
+          margin-top: 0.82rem;
+          left: 1.7rem
+        }
+      }
+    }
+  }
+
+  .commonFailModal{
+    .ant-modal-content{
+      //height: 474px;
+      background: url(../public/images/common/sorry_bg.png) no-repeat;
+      .ant-modal-body{
+        .ant-confirm-btns{
+          //bottom: 210px
+        }
+      }
+    }
+  }
+  .sorryAlert{
+    background: transparent;
+    position: relative;
+    top:20px;
+    .ant-modal-content{
+      height: 5.43rem;
+      width: 8.51rem;
+      margin: 0 auto;
+      // margin-left: 4.2rem;
+      margin-top: 0.46rem;
+      padding-top: 1.27rem;
+      position: relative;
+      left: 0.64rem;
+      background: url(../public/images/common/sorry_bg.png) no-repeat top left / 100% 100%;
+      i{
+        display: none!important;
+      }
+      .ant-modal-close{
+        width: 1.27rem;
+        height: 1.27rem;
+        right: 1.27rem;
+        display: block;
+        span{
+          display: none;
+        }
+      }
+      .ant-modal-body{
+        width: 7.25rem;
+        padding-left: 0.34rem;
+        padding-right: 0.49rem;
+        text-align: center;
+        .ant-confirm-btns{
+          position: absolute;
+          left: 2.28rem;
+          bottom: 1.45rem;
+          button{
+            width: 2.36rem;
+            height: 0.7rem;
+            background: url(../public/images/common/ok_btn.png) no-repeat top left / 100% 100%;
+            border: none;
+            span{
+              display: none;
+            }
+          }
+        }
+      }
+      .ant-confirm-content{
+          position: relative;
+          font-size: 0.36rem;
+          color: #502c1c;
+          margin: 0
+      }
+    }
+  }
+  .twoPlayerConfirm{
+    background: transparent;
+    position: relative;
+    // width: 717px;
+    .ant-modal-content{
+      width: 7.88rem;
+      height: 5.43rem;
+      // padding-top: 80px;
+      margin: auto;
+      position: relative;
+      left: 0.63rem;
+      top: -0.82rem;
+     // background: url(../public/images/game/skillbox2.png) no-repeat top left / 100% 100%;
+      .ant-modal-close {
+        display: block;
+        width: 0.99rem;
+        height: 0.99rem;
+        position: absolute;
+        right: 0.62rem;
+        cursor: pointer;
+        span{
+          display: none;
+        }
+       }
+      i{
+        display: none!important;
+      }
+      .ant-modal-body{
+        width: 6.70rem;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+        .ant-confirm-btns{
+          position: absolute;
+          bottom: 120px;
+          left: 230px;
+          display: none;
+          button{
+            width: 175px;
+            height: 52px;
+            background: url(../public/images/common/ok_btn.png) no-repeat;
+            border: none;
+            span{
+              display: none;
+            }
+          }
+        }
+      }
+      .ant-confirm-content{
+          position: relative;
+          font-size: 26px;
+          color: #502c1c;
+          margin-right: 27px;
+      }
+    }
+  }
+  .threePlayerConfirm{
+    background: transparent;
+    position: relative;
+    // width: 942px;
+    .ant-modal-content{
+      width: 10.38rem;
+      height: 5.43rem;
+      margin: auto;
+      // padding-top: 80px;
+      position: relative;
+      top: -1rem;
+      left: 0.45rem;
+      //background: url(../public/images/game/skillbox3.png) no-repeat top left / 100% 100%;
+      .ant-modal-close {
+        display: block;
+        width: 0.98rem;
+        height: 0.98rem;
+        position: absolute;
+        right: 0.43rem;
+        cursor: pointer;
+        span{
+          display: none;
+        }
+       }
+      i{
+        display: none!important;
+      }
+      .ant-modal-body{
+        width: 9.53rem;
+        padding: 0;
+        padding-top: 0.91rem;
+        text-align: center;
+        .ant-confirm-btns{
+          position: absolute;
+          bottom: 120px;
+          left: 345px;
+          display: none;
+          button{
+            width: 175px;
+            height: 52px;
+            background: url(../public/images/common/ok_btn.png) no-repeat;
+            border: none;
+            span{
+              display: none;
+            }
+          }
+        }
+      }
+      .ant-confirm-content{
+          position: relative;
+          font-size: 26px;
+          color: #502c1c;
+          margin-right: 16px;
+      }
+    }
+  }
+
+  .commonConfirm{
+    background: transparent;
+    position: relative;
+      top:0;
+    .ant-modal-content{
+      height: 5.89rem;
+      width: 8.15rem;
+      margin: 0 auto;
+      padding-top: 1.27rem;
+      // margin-left: 3.06rem;
+      margin-top: 0.63rem;
+      position: relative;
+      left: 0.64rem;
+      background: url(../public/images/common/common_modal_bg.png) no-repeat top left / 100% 100%;
+      i{
+        display: none!important;
+      }
+      .ant-modal-close{
+        right: 1.38rem;
+        width: 1.27rem;
+        height: 1.27rem;
+        display: block;
+        span{
+          display: none;
+        }
+      }
+      .ant-modal-body{
+        width: 6.52rem;
+        padding: 0;
+        padding-left: 0.27rem;
+        padding-right: 0.09rem;
+        text-align: center;
+        .ant-confirm-btns{
+          position: absolute;
+          left: 1.59rem;
+          margin-top: 0.84rem;
+          button{
+            // width: 175px;
+            // height: 52px;
+            // width: 84px;
+            // height: 25px;
+            width: 1.52rem;
+            height: 0.45rem;
+            background: url(../public/images/common/cancel_btn.png) no-repeat top left / 100% 100%;
+            border: none;
+            float:right;
+            margin: 0.22rem 0.09rem;
+            &.ant-btn.ant-btn-primary{
+              background: url(../public/images/common/ok_btn.png) no-repeat top left / 100% 100%;
+            }
+            span{
+              display: none;
+            }
+          }
+        }
+      }
+      .ant-confirm-content{
+          position: relative;
+          font-size: 0.33rem;
+          color: #502c1c;
+          margin-left: 0;
+      }
+    }
+    &.gameOverConfirm {
+        .ant-modal-content{
+            .ant-modal-body{
+              .ant-confirm-btns{
+                button{
+                  // width: 2.5rem;
+                  // height: 0.8rem;
+                  background: url(../public/images/common/观战中文.png) top left / 100% 100% no-repeat;
+                  // background-size: cover;
+                  // border: none;
+                  // float:right;
+                  // margin: 0 5px;
+                  &.ant-btn.ant-btn-primary{
+                    background: url(../public/images/common/主大厅中文.png) top left / 100% 100% no-repeat;
+                    // background-size: cover;
+                  }
+                  // span{
+                  //   display: none;
+                  // }
+                }
+              }
+            }
+            // .ant-confirm-content{
+            //     position: relative;
+            //     font-size: 26px;
+            //     color: #502c1c;
+
+            // }
+          }
+    }
+    &.useSkillModal_useBtn{
+      .ant-modal-content{
+        .ant-modal-body{
+          width: 6.3rem;
+          padding: 0;
+          padding-top: 0.33rem;
+          margin-left: 0.33rem;
+          .ant-confirm-body{
+            .ant-confirm-content{
+              margin: 0;
+            }
+          }
+          .ant-confirm-btns{
+            // left: 39px;
+            button{
+              &.ant-btn.ant-btn-primary{
+               // background: url(../public/images/game/use_btn.png) no-repeat top left / 100% 100% no-repeat;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .buyDaojuConfirm{
+    // width: 480px!important;
+    .ant-modal-content{
+      width: 7.19rem;
+        height: 6.25rem;
+      // height: 454px;
+      background: url(../public/images/common/modal_info.png) no-repeat top left / 100% 100%;
+      .ant-modal-close{
+         right: 0.875rem;
+      }
+      .ant-modal-body{
+         width: 5.67rem;
+        // padding: 0 15px;
+        .ant-confirm-btns{
+            bottom: 1.375rem;
+            left: 1.29rem;
+        }
+          .ant-confirm-body{
+            .ant-confirm-content{
+              margin: 0;
+                padding-top: .5rem;
+              // margin-top: 78px;
+            }
+          }
+
+      }
+    }
+  }
+
+  .replaceSkill{
+    .ant-modal-content{
+      .ant-modal-body{
+        padding-top: 0.18rem;
+        .ant-confirm-btns{
+          button{
+            // width: 175px;
+            // height: 52px;
+            background: url(../public/images/common/cancel_btn.png) no-repeat top left / 100% 100%;
+            border: none;
+            float:right;
+            // margin: 0 5px;
+            &.ant-btn.ant-btn-primary{
+            //  background: url(../public/images/meditatively/replace_btn.png) no-repeat top left / 100% 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sellConfirm{
+    background: transparent;
+    position: relative;
+    .ant-modal-content{
+      width: 7.48rem;
+      height: 6.34rem;
+      padding-top: 1rem;
+      margin: 0 auto;
+      position: relative;
+      left: 0.64rem;
+      top: -1.2rem;
+     // background: url(../public/images/market/sell_modal.png) no-repeat top left / 100% 100%;
+      // background-size: 110%;
+      .ant-modal-close {
+        display: block;
+        width: 1.16rem;
+        height: 1.16rem;
+        position: absolute;
+        right: 1rem;
+        cursor: pointer;
+        span{
+          display: none;
+        }
+       }
+      i{
+        display: none!important;
+      }
+      .ant-modal-body{
+        width: 5.98rem;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        text-align: center;
+        .ant-confirm-btns{
+          position: absolute;
+          bottom: 1.27rem;
+          left: 1.11rem;
+          button{
+            width: 1.63rem;
+            height: 0.49rem;
+            background: url(../public/images/common/cancel_btn.png) no-repeat top left / 100% 100%;
+            border: none;
+            float:right;
+            margin: 0 0.09rem;
+            &.ant-btn.ant-btn-primary{
+            //  background: url(../public/images/market/sell_btn.png) no-repeat top left / 100% 100%;
+            }
+            span{
+              display: none;
+            }
+          }
+        }
+      }
+      .ant-confirm-content{
+          position: relative;
+          font-size: 0.36rem;
+          color: #502c1c;
+          margin: 0;
+
+      }
+    }
+  }
+  .offSellConfirm{
+    .ant-modal-content{
+      // background-size: 110%;
+      .ant-modal-close {
+          right: 1.39rem;
+          width: 1.27rem;
+          height: 1.27rem;
+          display: block;
+       }
+      .ant-modal-body{
+        width: 6.16rem;
+        .ant-confirm-content{
+          margin-top: 1rem;
+        }
+        .ant-confirm-btns{
+          bottom: 1.27rem;
+          left: 1.65rem;
+        }
+        .ant-confirm-body{
+          .ant-confirm-content{
+            font-size: 0.36rem;
+          }
+        }
+      }
+    }
+  }
+  .offSellConfirm,.sellConfirm,.buyConfirm{
+    .avt-normal,.avt-golden,.avt-silver,.avt-bronze,.avt-diamond{
+      margin-top: 5px;
+      width: 200px;
+      height: 180px;
+      background-position: 31px 0;
+      background-size: 157%;
+      >div:nth-child(1){
+        box-sizing: border-box;
+        padding-left: 32px;
+      }
+      >div:nth-child(2){
+        box-sizing: border-box;
+        padding-left: 32px;
+      }
+    }
+  }
+  .buyConfirm{
+    background: transparent;
+    position: relative;
+      top: 0 !important;
+    .ant-modal-content{
+      width: 7.48rem;
+      height: 6.34rem;
+      padding-top: 1rem;
+      margin: 0 auto;
+      margin-top: 0.72rem;
+      position: relative;
+      left: 0.64rem;
+    //  background: url(../public/images/market/buy_modal.png) top left / 100% 100% no-repeat;
+      // background-size: 115%;
+      .ant-modal-close {
+        display: block;
+        width: 1.16rem;
+        height: 1.16rem;
+        position: absolute;
+        right: 1rem;
+        cursor: pointer;
+        span{
+          display: none;
+        }
+       }
+      i{
+        display: none!important;
+      }
+      .ant-modal-body{
+        width: 6.09rem;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        text-align: center;
+        .ant-confirm-btns{
+          position: absolute;
+          bottom: 1.3rem;
+          left: 1.27rem;
+          button{
+            width: 1.63rem;
+            height: 0.49rem;
+            background: url(../public/images/common/cancel_btn.png) no-repeat top left / 100% 100%;
+            border: none;
+            float:right;
+            margin: 0 0.09rem;
+            &.ant-btn.ant-btn-primary{
+              background: url(../public/images/common/ok_btn.png) no-repeat top left / 100% 100%;
+            }
+            span{
+              display: none;
+            }
+          }
+        }
+      }
+      .ant-confirm-content{
+          position: relative;
+          font-size: 0.36rem;
+          color: #502c1c;
+          // padding-top: 0.2rem !important;
+          margin-left: 0
+      }
+    }
+  }
+
+  .bindWallet{
+    .ant-modal-content .ant-modal-body .ant-confirm-body-wrapper .ant-confirm-btns button.ant-btn.ant-btn-primary{
+    //  background: url(../public/images/pandahome/bind_btn.png) top left / 100% 100% no-repeat;
+    }
+  }
+
+  .bindModal{
+    background: transparent;
+    position: relative;
+      width: 100% !important;
+      height: 100% !important;
+      top:0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      // transform: scale(.7);
+    .ant-modal-content{
+      //width: 100%;
+      //height: 100%;
+      ////left: -243px;
+      ////padding: 80px 100px 100px 141px;
+      //background: url(../public/images/pandahome/bind_eos.png) top left / 100% 100% no-repeat;
+        width: 10.5rem;
+        height: 5.80rem;
+        padding: 0 1.4rem 0 0.3rem;
+        margin: 0 auto;
+        margin-top: 1rem;
+        position: relative;
+        left: 0.64rem;
+       // background: url(../public/images/pandahome/bind_eos.png) top left / 100% 100% no-repeat;
+
+      i{
+        display: none!important;
+      }
+      .ant-modal-close{
+        right: 1rem;
+        width: 1.4rem;
+        height: 1.4rem;
+        display: block;
+        span{
+          display: none;
+        }
+      }
+      .ant-modal-body{
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+        .ant-confirm-btns{
+          //position: absolute;
+          //bottom: 110px;
+          //left: 386px;
+          //  overflow: hidden;
+            display: flex;
+            justify-content: center;
+            margin-top: 0.3rem !important;
+            float: none !important;
+            // padding-right:6%;
+          button{
+            width: 1.4rem;
+            height: 0.5rem;
+            border: none;
+            //float:right;
+            display:none;
+            margin: 0 0.1rem;
+            &.ant-btn.ant-btn-primary{
+            //  background: url(../public/images/pandahome/buy_btn.png) top left / 100% 100% no-repeat;
+              display: block;
+            }
+            span{
+              display: none;
+            }
+          }
+
+        }
+      }
+      .ant-confirm-content{
+          position: relative;
+          font-size: 0.36rem;
+          color: #502c1c;
+          margin-left: 0 !important;
+          padding-top: 0.54rem !important;
+      }
+    }
+  }
+
+  .buySomething{
+    .ant-modal-content{
+      margin-top: 0.7rem;
+      .ant-modal-body{
+        text-align: center;
+
+          p{
+          margin-bottom: 0.2rem;
+        }
+        .ant-confirm-btns{
+          //position: absolute;
+          //bottom: 110px;
+          //left: 278px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            float: left !important;
+          button{
+            width: 1.81rem;
+            height: 0.54rem;
+            border: none;
+            float:right;
+            display:none;
+            margin: 0 0.4rem;
+            &.ant-btn.ant-btn-primary{
+            //  background: url(../public/images/pandahome/buy_btn.png) no-repeat top left / 100%;
+              display: block;
+              // margin-right: 30px;
+            }
+            &.ant-btn{
+              background: url(../public/images/common/cancel_btn.png) no-repeat top left / 100%;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .helpModal{
+    width: 80vh!important;
+    height: 90vw;
+    z-index: 9998;
+    transform: translateZ(1.3px);
+    .ant-modal-content{
+      .anticon{
+        display: none;
+      }
+      background: wheat;
+      height: 100%;
+      // overflow: auto;
+      padding: 0.42rem 0;
+      .ant-modal-close{
+        display: block;
+        color: white;
+        .ant-modal-close-x{
+          width: 0.83rem;
+          height: 0.83rem;
+          line-height: 0.83rem;
+          margin-right: 0.52rem;
+        }
+        .anticon{
+          display: inline-block;
+        }
+      }
+      .ant-modal-body{
+        height: 100%;
+        padding-top: 0;
+        overflow: auto;
+          -webkit-overflow-scrolling:touch;
+      }
+      .ant-confirm-btns{
+        display: none;
+      }
+    }
+  }
+
+  // .ant-popover{
+  //   width: 255px;
+  //   height: 274px;
+  //   .ant-popover-arrow{
+  //     display: none;
+  //   }
+  //   background: transparent;
+  //   display: block;
+  //   .ant-popover-content{
+  //     position: absolute;
+  //     top: -277px;
+  //     left: -257px;
+  //   }
+  // }
+
+  // .ant-popover-inner {
+  //   border: none;
+  //   border-radius: 0;
+  //   background: transparent!important;
+  //   box-shadow: 0!important;
+  //   display: block;
+  // }
+  // .ant-popover-inner-content{
+  //   height: 274px;
+  //   width: 255px;
+  //   padding: 48px 48px 0 15px!important;
+  //   background: url(../public/images/pandahome/skill_tip.png) no-repeat;
+  //   .skillWrap{
+  //       height: 70px;
+  //   }
+  //   .skillDetailTitle{
+  //       font-size: 18px;
+  //       text-align: center;
+  //       color: #502c1c;
+  //   }
+  //   .skillDetailDesc{
+  //       font-size: 14px;
+  //       color: #9b5f26;
+  //       text-align: left;
+  //       padding: 0 10px;
+  //       width: 200px;
+  //       word-break: break-all;
+  //       padding-left: 25px;
+  //   }
+  // }
+  .ant-checkbox-inner{
+    border: none!important;
+    width: 27px!important;
+    height: 28px!important;
+    background: transparent!important;
+    &:after{
+      display: none!important;
+    }
+  }
+  .ant-checkbox-checked .ant-checkbox-inner{
+    border: none!important;
+    width: 54px;
+    height: 56px;
+   // background: url(../public/images/market/checked.png) center no-repeat!important;
+  }
+
+  .vertical-center-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ant-modal {
+      top: 0;
+      .ant-modal-body {
+        max-height: 80vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+  }
+
+  .ant-form-item-control {
+    vertical-align: middle;
+  }
+
+  .ant-modal-mask {
+    background-color: rgba(55, 55, 55, 0.2);
+  }
+
+  .ant-modal-content {
+    box-shadow: none;
+  }
+
+  .ant-select-dropdown-menu-item {
+    padding: 12px 16px !important;
+  }
+
+  .margin-right {
+    margin-right: 16px;
+  }
+
+  a:focus {
+    text-decoration: none;
+  }
+
+  .avt-normal{
+    background: url(../public/images/common/no_color_panda_avt_all.png) -146px 0 no-repeat ;
+  }
+  .avt-golden{
+      background: url(../public/images/common/gold_avt_all.png) -146px 0 no-repeat;
+  }
+  .avt-silver{
+      background: url(../public/images/common/silver_avt_all.png) -146px 0 no-repeat;
+  }
+  .avt-bronze{
+      background: url(../public/images/common/copper_avt_all.png) -146px 0 no-repeat;
+  }
+  .avt-diamond{
+      background: url(../public/images/common/diamond_avt_all.png) -146px 0 no-repeat;
+  }
+
+  .panda-normal{
+    background: url(../public/images/common/no_color_panda.png) no-repeat;
+  }
+  .panda-golden{
+    background: url(../public/images/common/gold_panda.png) no-repeat;
+  }
+  .panda-silver{
+    background: url(../public/images/common/silver_panda.png) no-repeat;
+  }
+  .panda-bronze{
+    background: url(../public/images/common/copper_panda.png) no-repeat;
+  }
+  .panda-diamond{
+    background: url(../public/images/common/diamond_panda.png) no-repeat;
+  }
+  .unitBg {
+    background: url(../public/images/common/unitBg.png) no-repeat;
+  }
+
+  .actHeader-first{
+    //background: url(../public/images/activity/h_first_bg.png) no-repeat;
+  }
+  .actHeader-sec{
+     // background: url(../public/images/activity/h_sec_bg.png) no-repeat;
+  }
+  .actHeader-three{
+      //background: url(../public/images/activity/h_three_bg.png) no-repeat;
+  }
+  .pandaNameEdit_home_golden{
+    margin-left: 45px;
+  }
+  .pandaNameEdit_home_silver{
+      margin-left: -20px;
+  }
+  .pandaNameEdit_home_diamond{
+      margin-left: 11px;
+  }
+  .pandaNameEdit_home_bronze{
+      margin-left: 8px;
+  }
+  .pandaNameEdit_home_normal{
+      margin-left: -2px;
+  }
+  .pandaNameEdit_medit_golden{
+    margin-left: 12px;
+  }
+  .pandaNameEdit_medit_silver{
+      margin-left: -65px;
+  }
+  .pandaNameEdit_medit_diamond{
+      margin-left: -23px;
+  }
+  .pandaNameEdit_medit_bronze{
+      margin-left: -18px;
+  }
+  .pandaNameEdit_medit_normal{
+      margin-left: -2px;
+  }
+  .pandaNameEdit_guangyin_golden{
+    margin-left: 45px;
+  }
+  .pandaNameEdit_guangyin_silver{
+      margin-left: -20px;
+  }
+  .pandaNameEdit_guangyin_diamond{
+      margin-left: 5px;
+  }
+  .pandaNameEdit_guangyin_bronze{
+      margin-left: 8px;
+  }
+  .pandaNameEdit_guangyin_normal{
+      margin-left: -2px;
+  }
+  .pandaNameEdit_wudao_golden{
+    margin-left: 13px;
+  }
+  .pandaNameEdit_wudao_silver{
+      margin-left: -63px;
+  }
+  .pandaNameEdit_wudao_diamond{
+      margin-left: -23px;
+  }
+  .pandaNameEdit_wudao_bronze{
+      margin-left: -14px;
+  }
+  .pandaNameEdit_wudao_normal{
+      margin-left: -2px;
+  }
+
+  // 游戏破产
+
+  // .gameNoMoneyConfirm{
+  //   background: transparent;
+  //   position: relative;
+  //   .ant-modal-content{
+  //       height: 300px;
+  //       width: 470px;
+  //       margin: 0 auto;
+  //     padding-top: 80px;
+  //     background: url(../public/images/common/common_modal_bg.png) no-repeat;
+  //     i{
+  //       display: none!important;
+  //     }
+  //     .ant-modal-close{
+  //       right: 94px;
+  //       width: 85px;
+  //       height: 85px;
+  //       display: block;
+  //       span{
+  //         display: none;
+  //       }
+  //     }
+  //     .ant-modal-body{
+  //       width: 400px;
+  //       padding-left: 0;
+  //       padding-right: 0;
+  //       text-align: center;
+  //       .ant-confirm-btns{
+  //         position: absolute;
+  //         bottom: 100px;
+  //         left: 45px;
+  //         button{
+  //           width: 175px;
+  //           height: 52px;
+  //           background: url(../public/images/game/watcher.png) no-repeat;
+  //           border: none;
+  //           float:right;
+  //           margin: 0 5px;
+  //           background-size: 175px 52px;
+  //           &.ant-btn.ant-btn-primary{
+  //             background: url(../public/images/game/mainScene.png) no-repeat;
+  //           }
+  //           span{
+  //             display: none;
+  //           }
+  //         }
+  //       }
+  //     }
+  //     .ant-confirm-content{
+  //         position: relative;
+  //         font-size:26px;
+  //         color: #502c1c;
+  //     }
+  //   }
+  // }
+
+  // 分页
+  .ant-pagination-item{
+    background: transparent!important;
+    border: none!important;
+    font-family: font1!important;
+  }
+  .ant-pagination-item-active{
+    background: #9b5f26!important;
+    border-radius: 50%!important;
+    a{
+
+      color: white!important;
+    }
+  }
+
+    .ant-modal-wrap{
+      overflow: hidden;
+    }
+    .titleTip{
+      .ant-popover-content{
+        .ant-popover-arrow{
+          display: none
+        }
+        .ant-popover-inner{
+          background-color: inherit;
+          .ant-popover-inner-content{
+            padding: 15px 40px 60px 25px;
+            background: url(../public/images/common/skill_bottom.png) no-repeat;
+            background-size: 95%;
+          }
+        }
+      }
+    }
+
+}
+button{
+  border:none!important;
+}
+
+
+
+//@media (min-width: 1281px) {
+//  body{
+//    min-width: 1920px;
+//    // height: 1056px!important;
+//    background: url(../public/images/common/bg_1920.png) top center no-repeat;
+//  }
+//}
+//@media (max-width: 1280px) {
+  body{
+      // width: 100%!important;
+      // height: 100%!important;
+    // background: url(../public/images/common/bg_1280.jpg) top left / 100% 100% no-repeat;
+    overflow: hidden;
+  //  background-size: 100%;
+  position:fixed;
+  // text-size-adjust: 100%;
+  }
+  :global {
+    #a{
+      background: url(../public/images/common/bg_1280.jpg) top left / 100% 100% no-repeat;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      position: relative
+    }
+    .ant-modal{
+      margin: 0!important;
+      &.helpModal{
+        margin: auto!important;
+        margin-top: 0.54rem!important;
+        top: 0;
+      }
+    }
+    .ant-pagination-item,
+    .ant-pagination-next,
+    .ant-pagination-options,
+    .ant-pagination-prev {
+      margin-bottom: 8px;
+    }
+    .ant-modal-mask .ant-modal-wrap{
+      overflow: hidden;
+    }
+    .ant-card {
+      .ant-card-head {
+        padding: 0 12px;
+      }
+
+      .ant-card-body {
+        padding: 12px;
+      }
+    }
+  }
+
+
+//}
+
