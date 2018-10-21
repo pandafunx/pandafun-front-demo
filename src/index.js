@@ -4,6 +4,7 @@ import createLoading from 'dva-loading'
 import createHistory from 'history/createBrowserHistory'
 import 'babel-polyfill'
 import 'eosjs';
+import 'utils/scatter.min.2.5.2'
 
 // 1. Initialize
 const app = dva({

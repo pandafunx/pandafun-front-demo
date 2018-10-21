@@ -6,8 +6,6 @@ import { query, logout } from 'services/app'
 import queryString from 'query-string'
 import { message, Modal } from 'antd'
 
-import ScatterJS from 'scatterjs-core';
-import ScatterEOS from 'scatterjs-plugin-eosjs';
 
 const { prefix, amount } = config
 const Eos = require('eosjs')
@@ -39,39 +37,21 @@ export default {
 
     setupHistory({ dispatch, history }) {
 
-        var tp = require('tp-eosjs');
-        tp.getAppInfo().then();
-            tp.getAppInfo().then(versionInfo => {
-                if("android" == versionInfo.data.system){
-                    if(versionInfo.data.version.replace('.','').replace('.','') < 50){
-                        const modal = Modal.error({
-                            content:  '请升级TokenPocket版本至0.5.0或更高版本',
-                            className:  'reqErrMsg reqErrMsg_info' ,
-                        });
-                        setTimeout(() => modal.destroy(), 10000);
-                        window.close();
-                        return ;
-                    }
-                }else{
-                    if(versionInfo.data.version.replace('.','').replace('.','') < 48){
-                        const modal = Modal.error({
-                            content:  '请升级TokenPocket版本至0.4.8或更高版本',
-                            className:  'reqErrMsg reqErrMsg_info' ,
-                        });
-                        setTimeout(() => modal.destroy(), 10000);
-                        window.close();
-                        return ;
-                    }
-                }
-            }).catch(error => {
-               // alert("error")
-                // alert(error)
-            });
+        // scatter.connect("PandaFun").then(connected => {
+        //
+        //       if (!connected) {
+        //           // User does not have Scatter Desktop or Classic installed.
+        //           const modal = Modal.error({
+        //             content:  '请检查是否已安装Scatter桌面版本或Scatter浏览器插件',
+        //             className:  'reqErrMsg reqErrMsg_info' ,
+        //           });
+        //           setTimeout(() => modal.destroy(), 4000);
+        //           return false;
+        //         }});
 
         let options = { initTimeout: 25000, linkTimeout: 35000 };
 
-        ScatterJS.plugins( new ScatterEOS() );
-        ScatterJS.scatter.connect("PandaFun").then(connected => {
+        scatter.connect("PandaFun").then(connected => {
 
         if (!connected) {
             // User does not have Scatter Desktop or Classic installed.
@@ -83,7 +63,7 @@ export default {
             return false;
           }
 
-          const scatter = ScatterJS.scatter;
+          const scatter = window.scatter;
         // It is good practice to take this off the window once you have
         // a reference to it.
         window.scatter = null;
